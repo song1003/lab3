@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+		<title>KS grocery store</title>
+		<link rel="stylesheet" type="text/css" href="lab2.css">
+		<script src="groceries.js"></script>
+		<script src="main.js"></script>
+	</head>
+	<body>
+		<h1>KS grocery store</h1>
+		<div class="div1">
+			<button class="tablinks" onclick="openInfo(event, 'Personal data')">Personal data</button>
+  			<button class="tablinks" onclick="openInfo(event, 'Products')">Products</button>
+ 			<button class="tablinks" onclick="openInfo(event, 'Cart')">Cart</button>
+		</div>
+
+		<div class="div2" id="Personal data">
+			<h3>STEP 1. Personal Information</h3>
+			<p class="stext">Please give us the following information before shopping:</p>
+			<p>
+				<div id="chooseRestrictions">
+					<strong>Select the following dietary restrictions that apply to you:</strong><br>
+					<label><input id="restrictions" type="checkbox" name="restrictions" value="lactose-intolerant">lactose-intolerant</label><br>
+					<label><input id="restrictions" type="checkbox" name="restrictions" value="nut allergies">nut allergies</label><br>
+					<label><input id="restrictions" type="checkbox" name="restrictions" value="none">none</label><br>
+				</div>
+
+				<div id="preference">
+					<strong>Do you like organic food or not?</strong><br>
+					<label><input id="preferOr" type="radio" name="organic" value="yes">yes</label>
+					<label><input id="preferOr" type="radio" name="organic" value="no">no</label>
+					<label><input id="preferOr" type="radio" name="organic" value="none">none</label>
+				</div>
+				<div id="sale">
+					<strong> ON SALE </strong><br>
+					<label><input id="preferSale" type="radio" name="onSale" value="yes">yes</label>
+					<label><input id="preferSale" type="radio" name="onSale" value="no">no</label>
+				</div>
+
+				<button id="addCart" type="button" class="block" onclick="selectedDietaryRestrictionsAndPreference()">View Items &raquo;</button>
+			</p>
+
+		</div>
+
+		<div class="div2" id="Products">
+			<h3>STEP 2. Products</h3>
+			<h3>Here are the products correspond with your dietary restrictions</h3>
+			<strong id="stext1">Please select which products you want:</strong><br>
+			<div id="product"></div>
+			<button id="addCart" type="button" class="block" onclick="selectedItems()">Add to cart</button><br>
+			<button id="addCart" type="button" class="block" onclick="openInfo1(event, 'Personal data', 0)">&laquo; Go Back</button>
+			<button id="addCart" type="button" class="block" onclick="openInfo1(event, 'Cart', 2)">View Cart &raquo;</button>
+		</div>
+
+		<div class="div2" id="Cart">
+			<h3>STEP 3. Cart</h3>
+			<p class="stext">Here is your grocery cart.</p>
+			<strong id="stext1">You selected : </strong><br>
+			<div id="showProducts"></div>
+			<button id="addCart" type="button" class="block" onclick="openInfo1(event, 'Products', 1)">&laquo; Back to view </button><br>
+			<div id="howPick">
+				<strong id="stext2">Choose pick up method</strong><br>
+				<label><input id="pickup" type="radio" name="pickup" value="Delivery">Delivery</label>
+				<label><input id="pickup" type="radio" name="pickup" value="Pick Up">Pick Up</label>
+			</div>
+		</div>
+		<p id="signature">Site created by KS</p>
+		<script src="groceries.js"></script>
+		<script src="main.js"></script>	
+	</body>
+</html>
